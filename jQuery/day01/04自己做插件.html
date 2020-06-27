@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv2 div{
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            float:left;
+            margin-left:5px;
+        }
+    </style>
+</head>
+<script src="jquery-1.12.2.js"></script>
+<script>
+    $(function(){
+        $.fn.changeColor=function(color){
+          $(this).css("backgroundColor",color);
+        };
+        $("#dv input").click(function(){
+            $("#dv2 div").changeColor($(this).val());
+        });
+    });
+</script>
+<body>
+<div id="dv">
+    <input type="button" value="red" >
+    <input type="button" value="green" >
+    <input type="button" value="blue" >
+
+<div id="dv2">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</div>
+</body>
+</html>

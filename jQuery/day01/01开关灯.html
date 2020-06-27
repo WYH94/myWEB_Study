@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="jquery-1.12.2.js"></script>
+<body>
+<input type="button" value="关灯" id="btn">
+<script>
+    $("#btn").click(function(){
+        if($(this).val()=="关灯"){
+            $("body").css("backgroundColor","black");
+            $(this).val("开灯");
+        }else{
+            $("body").css("backgroundColor","");
+            $(this).val("关灯");
+        }
+    });
+</script>
+</body>
+</html>

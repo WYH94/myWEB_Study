@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		
+		.father {
+			width: 500px;
+			height: 500px;
+			background-color: pink;
+			margin-bottom: 100px;
+			/*padding-top: 50px;*/
+			overflow: hidden;
+		}
+		.son {
+			width: 200px;
+			height: 200px;
+			background-color: green;
+			margin-top: 50px;  /*外边距塌陷*/
+			margin-left: 50px;
+			/*margin-top: 50px;*/ /*为什么不往下走，相邻块的垂直外边距合并*/
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	
+</html>

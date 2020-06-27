@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/jquery_changecolor.css">
+</head>
+<script src="js/jquery-1.12.2.js"></script>
+<script src="js/jquery_changecolor.js"></script>
+<script>
+    $(function(){
+        $("#dv input").click(function(){
+            $("#dv2 div").changeColor($(this).val());
+        });
+    });
+</script>
+
+<body>
+<div id="dv">
+    <input type="button" value="red" >
+    <input type="button" value="green" >
+    <input type="button" value="blue" >
+
+    <div id="dv2">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+</body>
+
+</html>

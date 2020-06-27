@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .top{
+            height: 30px;
+            width: 1000px;
+            text-align: center;
+            background-color: pink;
+            position:static;
+        }
+        .nav{
+            height: 100px;
+            width: 900px;
+            background-color: red;
+        }
+        .main{
+            height:1400px;
+            width: auto;
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+<script src="jquery-1.12.2.js"></script>
+<script>
+    $(function(){
+        //为浏览器注册滚动事件
+        $(window).scroll(function(){
+            //如果向上卷曲出去的距离>=第一个div
+            if($(this).scrollTop()>=$(".top").height()){
+                //设置导航栏固定页面的顶部
+                $(".nav").css("position","fixed");
+                //设置顶部值为0
+                $(".nav").css("top",0);
+                //设置.main的div不是直接跳上去
+                $(".main").css("marginTop",$(".nav").height());
+            }else{
+                $(".nav").css("position","static");
+                $(".main").css("marginTop",0);
+            }
+        });
+    });
+
+</script>
+<body>
+<div class="top"></div>
+<div class="nav"></div>
+<div class="main"></div>
+</body>
+</html>

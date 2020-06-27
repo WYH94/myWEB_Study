@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<script src="jquery-1.12.2.js"></script>
+<script>
+    $(function(){
+       $("#btn").click(function(){
+           $("<p>这是添加的P标签</p>").appendTo($("#dv"));
+
+           // $("p").click(function(){
+           //     alert("p被点了");
+           // });//只能为当前p绑定事件
+           // $("p").bind("click",function(){
+           //     alert("haha");
+           // });//只能为当前p绑定事件
+           $("#dv").delegate("p","click",function(){
+               alert("哈哈备点了");
+           });//delegate可以为该父级元素下的所有p绑定事件
+       });
+        $("#btn2").click(function(){
+            $("<p>这是添加的P标签</p>").appendTo($("#dv"));
+        });
+    });
+</script>
+<body>
+<input type="button" value="点击按钮" id="btn">
+<input type="button" value="点击按钮" id="btn2">
+<div id="dv">
+
+</div>
+</body>
+</html>
